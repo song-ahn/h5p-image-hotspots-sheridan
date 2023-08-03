@@ -1,6 +1,7 @@
 var H5PUpgrades = H5PUpgrades || {};
 
-H5PUpgrades['H5P.ImageHotspots'] = (function () {
+//@@SONG: changed classname
+H5PUpgrades['H5P.ImageHotspotsSheridan'] = (function () {
   return {
     1: {
        /**

@@ -1,7 +1,8 @@
 /**
  * Defines the ImageHotspots.Hotspot class
  */
-(function ($, ImageHotspots) {
+//@@SONG: changed classname
+(function ($, ImageHotspotsSheridan) {
 
   /**
    * Creates a new Hotspot
@@ -14,7 +15,7 @@
    * @param  {boolean} isSmallDeviceCB
    * @param  {H5P.ImageHotspots} parent
    */
-  ImageHotspots.Hotspot = function (config, options, id, isSmallDeviceCB, parent) {
+  ImageHotspotsSheridan.Hotspot = function (config, options, id, isSmallDeviceCB, parent) {
     var self = this;
     this.config = config;
     this.visible = false;
@@ -100,7 +101,7 @@
    * @public
    * @param {H5P.jQuery} $container
    */
-  ImageHotspots.Hotspot.prototype.appendTo = function ($container) {
+  ImageHotspotsSheridan.Hotspot.prototype.appendTo = function ($container) {
     this.$container = $container;
     this.$element.appendTo($container);
   };
@@ -109,7 +110,7 @@
    * Display the popup
    * @param {boolean} [focusPopup] Focuses popup for keyboard accessibility
    */
-  ImageHotspots.Hotspot.prototype.showPopup = function (focusPopup) {
+  ImageHotspotsSheridan.Hotspot.prototype.showPopup = function (focusPopup) {
     var self = this;
 
     // Create popup content:
@@ -179,7 +180,7 @@
     }
 
     // Create Image hot-spots popup
-    self.popup = new ImageHotspots.Popup(
+    self.popup = new ImageHotspotsSheridan.Popup(
       self.$container, $popupBody,
       self.config.position.x,
       self.config.position.y,
@@ -257,7 +258,7 @@
    * Toggle whether hotspots has tabindex
    * @param {boolean} [disable] Disable tabindex if true
    */
-  ImageHotspots.Hotspot.prototype.toggleHotspotsTabindex = function (disable) {
+  ImageHotspotsSheridan.Hotspot.prototype.toggleHotspotsTabindex = function (disable) {
     this.$container.find('.h5p-image-hotspot')
       .attr('tabindex', disable ? '-1' : '0')
       .attr('aria-hidden', disable ? true : '');
@@ -267,7 +268,7 @@
    * Hide popup
    * @public
    */
-  ImageHotspots.Hotspot.prototype.hidePopup = function () {
+  ImageHotspotsSheridan.Hotspot.prototype.hidePopup = function () {
     if (this.popup) {
       // We don't get click events on body for iOS-devices
       $('body').children().off('click.h5p-image-hotspot-popup');
@@ -301,7 +302,7 @@
    * @param {ImageHotspots.Hotspot} hotspot Hotspot that focus should be trapped to
    * @param {boolean} [trapReverseTab] Traps when tabbing backwards
    */
-  ImageHotspots.Hotspot.prototype.setTrapFocusTo = function (hotspot, trapReverseTab) {
+  ImageHotspotsSheridan.Hotspot.prototype.setTrapFocusTo = function (hotspot, trapReverseTab) {
     this.$element.on('keydown.trapfocus', function (e) {
       var keyCombination = e.which === 9 && (trapReverseTab ? e.shiftKey : !e.shiftKey);
       if (keyCombination) {
@@ -315,7 +316,7 @@
   /**
    * Release trap focus from hotspot
    */
-  ImageHotspots.Hotspot.prototype.releaseTrapFocus = function () {
+  ImageHotspotsSheridan.Hotspot.prototype.releaseTrapFocus = function () {
     this.$element.off('keydown.trapfocus');
   };
 
@@ -323,12 +324,12 @@
    * Set title of hotspot element
    * @param {string} title Title to set for hotspot element
    */
-  ImageHotspots.Hotspot.prototype.setTitle = function (title) {
+  ImageHotspotsSheridan.Hotspot.prototype.setTitle = function (title) {
     this.$element.attr('title', title);
     this.$element.attr('aria-label', title);
   };
 
-  ImageHotspots.Hotspot.prototype.pause = function () {
+  ImageHotspotsSheridan.Hotspot.prototype.pause = function () {
     if (this.actionInstances) {
       this.actionInstances.forEach(function(actionInstance) {
         if (actionInstance.audio && 
@@ -340,4 +341,4 @@
     };
   };
 
-})(H5P.jQuery, H5P.ImageHotspots);
+})(H5P.jQuery, H5P.ImageHotspotsSheridan);

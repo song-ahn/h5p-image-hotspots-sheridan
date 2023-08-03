@@ -1,7 +1,8 @@
 /**
  * Defines the ImageHotspots.Popup class
  */
-(function ($, ImageHotspots, EventDispatcher) {
+//@@SONG: changed classname
+(function ($, ImageHotspotsSheridan, EventDispatcher) {
 
   /**
    * Creates new Popup instance
@@ -19,7 +20,7 @@
    * @param {Object} options
    *
    */
-  ImageHotspots.Popup = function ($container, $content, x, y, hotspotWidth, header, className, fullscreen, options, legacy) {
+  ImageHotspotsSheridan.Popup = function ($container, $content, x, y, hotspotWidth, header, className, fullscreen, options, legacy) {
     EventDispatcher.call(this);
 
     var self = this;
@@ -204,7 +205,7 @@
   };
 
   // Extends the event dispatcher
-  ImageHotspots.Popup.prototype = Object.create(EventDispatcher.prototype);
-  ImageHotspots.Popup.prototype.constructor = ImageHotspots.Popup;
+  ImageHotspotsSheridan.Popup.prototype = Object.create(EventDispatcher.prototype);
+  ImageHotspotsSheridan.Popup.prototype.constructor = ImageHotspotsSheridan.Popup;
 
-})(H5P.jQuery, H5P.ImageHotspots, H5P.EventDispatcher);
+})(H5P.jQuery, H5P.ImageHotspotsSheridan, H5P.EventDispatcher);

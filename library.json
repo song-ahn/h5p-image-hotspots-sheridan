@@ -1,13 +1,13 @@
 {
-  "title": "Image Hotspots",
+  "title": "Image Hotspots - Sheridan",
   "description": "Add hotspots with useful information and media to an image.",
   "majorVersion": 1,
-  "minorVersion": 10,
-  "patchVersion": 2,
+  "minorVersion": 0,
+  "patchVersion": 0,
   "runnable": 1,
-  "author": "Joubel",
+  "author": "Joubel, song",
   "license": "MIT",
-  "machineName": "H5P.ImageHotspots",
+  "machineName": "H5P.ImageHotspotsSheridan",
   "fullscreen": 1,
   "coreApi": {
     "majorVersion": 1,

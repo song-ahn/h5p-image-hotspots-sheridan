@@ -1,7 +1,8 @@
 /**
  * Defines the H5P.ImageHotspots class
  */
-H5P.ImageHotspots = (function ($, EventDispatcher) {
+//@@SONG: changed classname
+H5P.ImageHotspotsSheridan = (function ($, EventDispatcher) {
 
   /**
    * Default font size
@@ -21,7 +22,7 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
    * @param {Object} options
    * @param {number} id
    */
-  function ImageHotspots(options, id) {
+  function ImageHotspotsSheridan(options, id) {
     EventDispatcher.call(this);
 
     // Extend defaults with provided options
@@ -38,8 +39,8 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
     this.isSmallDevice = false;
   }
   // Extends the event dispatcher
-  ImageHotspots.prototype = Object.create(EventDispatcher.prototype);
-  ImageHotspots.prototype.constructor = ImageHotspots;
+  ImageHotspotsSheridan.prototype = Object.create(EventDispatcher.prototype);
+  ImageHotspotsSheridan.prototype.constructor = ImageHotspotsSheridan;
 
   /**
    * Attach function called by H5P framework to insert H5P content into
@@ -48,7 +49,7 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
    * @public
    * @param {H5P.jQuery} $container
    */
-  ImageHotspots.prototype.attach = function ($container) {
+  ImageHotspotsSheridan.prototype.attach = function ($container) {
     var self = this;
     self.$container = $container;
 
@@ -116,7 +117,7 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
 
     for (var i=0; i<numHotspots; i++) {
       try {
-        var hotspot = new ImageHotspots.Hotspot(this.options.hotspots[i], this.options, this.id, isSmallDevice, self);
+        var hotspot = new ImageHotspotsSheridan.Hotspot(this.options.hotspots[i], this.options, this.id, isSmallDevice, self);
         hotspot.appendTo(this.$hotspotContainer);
         var hotspotTitle = this.options.hotspots[i].header ? this.options.hotspots[i].header
           : this.options.hotspotNumberLabel.replace('#num', (i + 1).toString());
@@ -152,7 +153,7 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
     self.resize();
   };
 
-  ImageHotspots.prototype.setShowingPopup = function (visible) {
+  ImageHotspotsSheridan.prototype.setShowingPopup = function (visible) {
     this.$container.toggleClass('showing-popup', visible);
   };
 
@@ -161,7 +162,7 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
    *
    * @param {boolean} enable True to enable, otherwise will be released
    */
-  ImageHotspots.prototype.toggleTrapFocus = function (enable) {
+  ImageHotspotsSheridan.prototype.toggleTrapFocus = function (enable) {
     if (this.hotspots.length < 1) {
       return;
     }
@@ -189,7 +190,7 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
    * @param {boolean} [e.forceImageHeight]
    * @param {boolean} [e.decreaseSize]
    */
-  ImageHotspots.prototype.resize = function (e) {
+  ImageHotspotsSheridan.prototype.resize = function (e) {
     if (this.options.image === null) {
       return;
     }
@@ -263,7 +264,7 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
     self.isSmallDevice = (containerWidth / parseFloat($("body").css("font-size")) < 40);
   };
 
-  ImageHotspots.prototype.pause = function() {
+  ImageHotspotsSheridan.prototype.pause = function() {
     this.hotspots.forEach(function(hotspot) {
       if (hotspot.pause) {
         hotspot.pause();
@@ -271,5 +272,5 @@ H5P.ImageHotspots = (function ($, EventDispatcher) {
     });
   };
 
-  return ImageHotspots;
+  return ImageHotspotsSheridan;
 })(H5P.jQuery, H5P.EventDispatcher);
