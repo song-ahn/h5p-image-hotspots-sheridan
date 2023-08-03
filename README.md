@@ -19,4 +19,4 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 - Forked from the original v1.10.2
 - Reset the version
 - Changed the class & type name
-- Changed the default font
+- Used H5P.TextSheridan for RTF
