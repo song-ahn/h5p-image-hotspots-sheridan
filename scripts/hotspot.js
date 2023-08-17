@@ -292,7 +292,7 @@
   /**
    * Focus hotspot
    */
-  ImageHotspots.Hotspot.prototype.focus = function () {
+  ImageHotspotsSheridan.Hotspot.prototype.focus = function () {
     this.$element.focus();
   };
 
